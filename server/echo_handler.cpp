@@ -5,7 +5,7 @@ namespace{
 
 class EchoHandler final : public userver::server::handlers::HttpHandlerBase {
 public:
-	static constexpt std::string_view kName = "echo-handler";
+	static constexpr std::string_view kName = "echo-handler";
 	using HttpHandlerBase::HttpHandlerBase;
 	std::string HandleRequestThrow(
 		const userver::server::http::HttpRequest& request,
@@ -16,4 +16,5 @@ public:
 }
 void AppendEchoHandler(userver::components::ComponentList& component_list){
 	component_list.Append<EchoHandler>();
+
 }
