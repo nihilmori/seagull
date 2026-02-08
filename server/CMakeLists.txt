@@ -16,6 +16,8 @@ add_executable(${PROJECT_NAME}
     userver::core
     userver::http
     userver::components
+    main.cpp
+    echo_handler.cpp
 )
 
 set(CMAKE_CXX_STANDARD 20)
