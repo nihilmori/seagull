@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 0.0.0)
+cmake_minimum_required(VERSION 3.14)
 project(seagull-server)
 
 include(FetchContent)
 
-FecthContent_Declare(
+FetchContent_Declare(
     userver
     GIT_REPOSITORY https://github.com/userver-framework/userver.git
     GIT_TAG        v2.15
@@ -20,8 +20,4 @@ add_executable(${PROJECT_NAME}
     echo_handler.cpp
 )
 
-target_link_libraries(${PROJECT_NAME}
-    userver::core
-    userver::http
-    userver::components
-)
+target_link_libraries(${PROJECT_NAME} PUBLIC userver::core)
