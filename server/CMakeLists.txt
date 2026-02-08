@@ -12,13 +12,16 @@ FecthContent_Declare(
 
 FetchContent_MakeAvailable(userver)
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 add_executable(${PROJECT_NAME}
-    userver::core
-    userver::http
-    userver::components
     main.cpp
     echo_handler.cpp
 )
 
-set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+target_link_libraries(${PROJECT_NAME}
+    userver::core
+    userver::http
+    userver::components
+)
